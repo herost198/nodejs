@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 
-app.set('')
+app.set('view engine', 'pug')
+app.set('views',"./views")
 
 app.get('/',(req, res) => res.send("hello world"));
 
