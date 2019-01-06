@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 //     {id: 2, name: "Anh"},
 //     {id: 3, name: "Quang"}
 // ]
-
+app.use(express.static('public'));
 app.get('/',function(req, res) {
     res.render('index',{
         name: "Quang Anh"
