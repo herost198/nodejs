@@ -6,6 +6,10 @@ router.get('/', controller.index);
 
 router.get('/search', controller.search);
 
+router.get('/cookie',function (req,res,next){
+    res.cookie('user-id',1234);
+    res.send('hello');
+})
 router.get('/create', controller.create);
 
 router.get('/:id', controller.get);
