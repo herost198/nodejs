@@ -1,11 +1,20 @@
-h1 User List
-a(href="/users/create") New user
-form(method="get" action="/users/search")
-    input(type="text", name ="q")
-    button Search
-ul 
-    each user in users
-        li
-            span= user.name
-            span &nbsp
-            a(href="/users/"+user.id) View
+extends ../layouts/layout.pug
+block content
+
+    h1 User List
+    a.btn.btn-primary(href="/users/create") New user
+    form(method="get" action="/users/search")
+        input(type="text", name ="q")
+        button Search
+    table.table
+        tr
+            th Name
+            th Phone
+            th Actions
+
+        each user in users
+            tr
+                td= user.name
+                td= user.phone
+                td 
+                    a(href="/users/"+user.id) View
