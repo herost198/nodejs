@@ -1,0 +1,13 @@
+extends ../layouts/layout.pug
+
+block content
+    h1 Login
+    if errors
+      each error in errors
+        .alert.alert-danger= error
+    form(action="/auth/login", method="POST")
+        label(for="email") Email
+        input(name="email",type="text",value= values ?  values.email : '')
+        label(for="password") Password
+        input(name='password', type='password', value= values ? values.password : '')
+        button login
